@@ -2,6 +2,7 @@ import de.looksgood.ani.*;
 import de.looksgood.ani.easing.*;
 import processing.net.*;
 
+String CATEGORIA = "a";
 int port = 10002;   
 Server myServer;    
 int enc; 
@@ -57,7 +58,7 @@ void checkClient() {
   if (thisClient !=null) {
     if (thisClient.available() > 0) {
       enc = thisClient.read();
-      if (abs(enc-lastPosicion) > 2) {
+      if (abs(enc-lastPosicion) > 1) {
         currentPosicion = enc;
         if (currentPosicion>lastPosicion) {
           lista.recorrerEncoder(1);

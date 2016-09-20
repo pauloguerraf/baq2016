@@ -15,7 +15,7 @@ class Galeria {
   Galeria(int numfots_, PVector pos1_, PVector pos2_, PVector pos3_, PVector pos4_) {
     numfots = numfots_;
     for (int i = 0; i<numfots; i++) {
-      imagenes.add(loadImage("ficha_"+int(seleccion)+"/foto_"+i+".jpg"));
+      imagenes.add(loadImage(CATEGORIA+"_ficha_"+int(seleccion)+"/"+CATEGORIA+"_foto_"+i+".jpg"));
     }
     esquinas.add(new PVector(pos1_.x, pos1_.y));  
     esquinas.add(new PVector(pos2_.x, pos2_.y));    
@@ -41,7 +41,7 @@ class Galeria {
   void prepareNextImages(int numfots_) {
     numfots = numfots_;
     for (int i = 0; i<numfots; i++) {
-      nextImagenes.add(loadImage("ficha_"+int(seleccion)+"/foto_"+i+".jpg"));
+      nextImagenes.add(loadImage(CATEGORIA+"_ficha_"+int(seleccion)+"/"+CATEGORIA+"_foto_"+i+".jpg"));
     }
     opacity=255;
   }

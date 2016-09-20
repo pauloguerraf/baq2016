@@ -21,7 +21,7 @@ class Pantalla {
     String[] coordsLamina = split(strings[0], ",");
     lamina1 = new Lamina(new PVector(int(coordsLamina[0]), int(coordsLamina[1])), 
       new PVector(int(coordsLamina[2]), int(coordsLamina[3])), new PVector(int(coordsLamina[4]), int(coordsLamina[5])), 
-      new PVector(int(coordsLamina[6]), int(coordsLamina[7])), "ficha_0/ficha.jpg");
+      new PVector(int(coordsLamina[6]), int(coordsLamina[7])), CATEGORIA+"_ficha_0/"+CATEGORIA+"_ficha.jpg");
     String[] coordsGaleria = split(strings[1], ",");
     galeria = new Galeria(3, new PVector(int(coordsGaleria[0]), int(coordsGaleria[1])), 
       new PVector(int(coordsGaleria[2]), int(coordsGaleria[3])), new PVector(int(coordsGaleria[4]), int(coordsGaleria[5])), 
@@ -29,7 +29,7 @@ class Pantalla {
     String[] coordsTexto = split(strings[2], ",");
     texto = new Texto(new PVector(int(coordsTexto[0]), int(coordsTexto[1])), 
       new PVector(int(coordsTexto[2]), int(coordsTexto[3])), new PVector(int(coordsTexto[4]), int(coordsTexto[5])), 
-      new PVector(int(coordsTexto[6]), int(coordsTexto[7])), "ficha_0/texto.jpg");
+      new PVector(int(coordsTexto[6]), int(coordsTexto[7])), CATEGORIA+"_ficha_0/"+CATEGORIA+"_texto.jpg");
   }
 
   void resetEsquinas() {
@@ -44,9 +44,9 @@ class Pantalla {
       new PVector(1014, 1046));
   }
   void prepareNextImages() {
-    lamina1.prepareNextImage("ficha_"+int(seleccion)+"/ficha.jpg");
+    lamina1.prepareNextImage(CATEGORIA+"ficha_"+int(seleccion)+"/ficha.jpg");
     galeria.prepareNextImages(3);
-    texto.prepareNextImage("ficha_"+int(seleccion)+"/texto.jpg");
+    texto.prepareNextImage(CATEGORIA+"ficha_"+int(seleccion)+"/texto.jpg");
   }
   void setNewImages() {
     lamina1.setNewImage();
