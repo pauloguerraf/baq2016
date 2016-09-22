@@ -1,5 +1,4 @@
 class Lista {
-  ArrayList<Float> nombres;
   PVector [] esquinas = new PVector[4];
   PVector loc;
   PGraphics pg;
@@ -12,24 +11,12 @@ class Lista {
   PVector esq3;
   PVector esq4;
 
-  Lista() {
-    nombres = new ArrayList<Float>();
-    loc = new PVector(0.7354*width, 0.7291*height);
-    for (int i=0; i<numFichas; i++) {
-      nombres.add(random(0, 1));
-    }
-  }
-
   Lista(PVector pos1_, PVector pos2_, PVector pos3_, PVector pos4_) {
     esquinas[0] = new PVector(pos1_.x, pos1_.y);  
     esquinas[1] = new PVector(pos2_.x, pos2_.y);    
     esquinas[2] = new PVector(pos3_.x, pos3_.y);    
     esquinas[3] = new PVector(pos4_.x, pos4_.y);
-    nombres = new ArrayList<Float>();
     loc = new PVector(0.7354*width, 0.7291*height);
-    for (int i=0; i<numFichas; i++) {
-      nombres.add(random(0, 1));
-    }
     pg = createGraphics(int(0.0822*width), int(0.5111*height), P3D);
   }
 
@@ -71,7 +58,7 @@ class Lista {
       pg.textAlign(CENTER, CENTER);
       pg.textSize(16);
       if (i==seleccion)fill(0);
-      pg.text(nombres.get(i).floatValue(), 0, 0);
+      pg.text(nombres.get(i), 0, 0);
       pg.popMatrix();
     }
     pg.endDraw();

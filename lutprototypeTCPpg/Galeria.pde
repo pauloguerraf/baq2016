@@ -11,17 +11,23 @@ class Galeria {
   PVector esq2;
   PVector esq3;
   PVector esq4;
-
-  Galeria(int numfots_, PVector pos1_, PVector pos2_, PVector pos3_, PVector pos4_) {
-    numfots = numfots_;
+  int tiempoDeCambio = 7000;
+  
+  Galeria(PVector pos1_, PVector pos2_, PVector pos3_, PVector pos4_) {
+    String path = sketchPath()+"/data/categoria_"+CAT+"/"+CAT+"_ficha_"+int(seleccion)+"/fotos"; 
+    File dataFolder = new File(path); 
+    String[] fileList = dataFolder.list(jpgFilter); 
+    println(fileList.length + " jpg files in specified directory");
+    numfots = fileList.length; 
     for (int i = 0; i<numfots; i++) {
-      imagenes.add(loadImage(CATEGORIA+"_ficha_"+int(seleccion)+"/"+CATEGORIA+"_foto_"+i+".jpg"));
+      imagenes.add(loadImage("categoria_"+CAT+"/"+CAT+"_ficha_"+int(seleccion)+"/fotos/foto_"+i+".jpg"));
     }
     esquinas.add(new PVector(pos1_.x, pos1_.y));  
     esquinas.add(new PVector(pos2_.x, pos2_.y));    
     esquinas.add(new PVector(pos3_.x, pos3_.y));    
     esquinas.add(new PVector(pos4_.x, pos4_.y));
     opacity=255;
+    println("fotos galeria : " + numfots);
   }
 
   void setEsquinas(PVector pos1_, PVector pos2_, PVector pos3_, PVector pos4_) {
@@ -38,10 +44,13 @@ class Galeria {
     opacity=255;
   }
 
-  void prepareNextImages(int numfots_) {
-    numfots = numfots_;
+  void prepareNextImages() {
+    String path = sketchPath()+"/data/categoria_"+CAT+"/"+CAT+"_ficha_"+int(seleccion)+"/planos"; 
+    File dataFolder = new File(path); 
+    String[] fileList = dataFolder.list(); 
+    numfots = fileList.length; 
     for (int i = 0; i<numfots; i++) {
-      nextImagenes.add(loadImage(CATEGORIA+"_ficha_"+int(seleccion)+"/"+CATEGORIA+"_foto_"+i+".jpg"));
+      nextImagenes.add(loadImage("categoria_"+CAT+"/"+CAT+"_ficha_"+int(seleccion)+"/fotos/foto_"+i+".jpg"));
     }
     opacity=255;
   }
@@ -56,7 +65,7 @@ class Galeria {
   }
 
   void changePhoto() {
-    if (currentfot < numfots-1)currentfot++;
+    if (currentfot < numfots-1)currentfot=currentfot+1;
     else currentfot = 0;
     Ani.to(this, 1.0, "opacity", 255, Ani.LINEAR, "onEnd:changeState");
   }
