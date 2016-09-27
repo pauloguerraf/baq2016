@@ -3,14 +3,16 @@ void checkClient() {
   if (thisClient !=null) {
     if (thisClient.available() > 0) {
       enc = thisClient.read();
-      if (abs(enc-lastPosicion) > 1) {
+      if (abs(enc-lastPosicion) > 0) {
         lastSleep = millis();
         currentPosicion = enc;
         if (currentPosicion>lastPosicion) {
-          lista.recorrerEncoder(1);
+          recorrerEncoder(1);
+          println("up encoder pos: " + currentPosicion);
           lastPosicion = currentPosicion;
         } else if (currentPosicion<lastPosicion) {
-          lista.recorrerEncoder(-1);
+          recorrerEncoder(-1);
+          println("down encoder pos: " + currentPosicion);
           lastPosicion = currentPosicion;
         }
       }

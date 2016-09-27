@@ -1,5 +1,4 @@
 class Pantalla {
-
   PApplet parent;
   GaleriaPlanos laminas;
   Galeria galeria;
@@ -26,9 +25,9 @@ class Pantalla {
     galeria.setEsquinas(new PVector(974, 62), 
       new PVector(1528, 62), new PVector(1528, 452), 
       new PVector(974, 452)); 
-    texto.setEsquinas(new PVector(1014, 575), 
-      new PVector(1273, 575), new PVector(1273, 1046), 
-      new PVector(1014, 1046));
+    texto.setEsquinas(new PVector(974, 459), 
+      new PVector(1574, 459), new PVector(1574, 1076), 
+      new PVector(974, 1076));
   }
   void prepareNextImages() {
     laminas.prepareNextImages();
@@ -48,5 +47,36 @@ class Pantalla {
     galeria.dibujar();
     laminas.dibujar();    
     texto.dibujar();
+  }
+
+  void checkCalib() {
+    if (esq >= 0 && esq < 4) {
+      noFill();
+      strokeWeight(3);
+      stroke(255, 0, 0);
+      fill(255, 0, 0);
+      ellipse(laminas.esquinas[esq].x, laminas.esquinas[esq].y, rad, rad);
+      if (mousePressed) {
+        laminas.esquinas[esq] = new PVector(mouseX, mouseY);
+      }
+    } else if (esq >= 4 && esq < 8) {
+      noFill();
+      strokeWeight(3);
+      stroke(255, 0, 0);
+      fill(255, 0, 0);
+      ellipse(galeria.esquinas[esq-4].x, galeria.esquinas[esq-4].y, rad, rad);
+      if (mousePressed) {
+        galeria.esquinas[esq-4] = new PVector(mouseX, mouseY);
+      }
+    } else if (esq >= 8 && esq < 12) {
+      noFill();
+      strokeWeight(3);
+      stroke(255, 0, 0);
+      fill(255, 0, 0);
+      ellipse(texto.esquinas[esq-8].x, texto.esquinas[esq-8].y, rad, rad);
+      if (mousePressed) {
+        texto.esquinas[esq-8] =  new PVector(mouseX, mouseY);
+      }
+    }
   }
 }
