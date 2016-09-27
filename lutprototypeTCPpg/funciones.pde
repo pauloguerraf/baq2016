@@ -97,9 +97,9 @@ void changeImages() {
   pantalla.setNewImages();
 }
 void cursorpos() {
-  String cursorPos ="x:"+floor(mouseX)+" y:"+floor(mouseY);
-  fill(100);
-  text(cursorPos, mouseX+20, mouseY+20);
+  //String cursorPos ="x:"+floor(mouseX)+" y:"+floor(mouseY);
+  //fill(100);
+  //text(cursorPos, mouseX+20, mouseY+20);
   fill(255);
   text(esq+1, 20, 50);
   pantalla.checkCalib();

@@ -15,7 +15,7 @@ class Pantalla {
     String[] coordsTexto = split(strings[2], ",");
     texto = new Texto(new PVector(int(coordsTexto[0]), int(coordsTexto[1])), 
       new PVector(int(coordsTexto[2]), int(coordsTexto[3])), new PVector(int(coordsTexto[4]), int(coordsTexto[5])), 
-      new PVector(int(coordsTexto[6]), int(coordsTexto[7])), "categoria_"+CAT+"/"+CAT+"_ficha_0/texto.jpg");
+      new PVector(int(coordsTexto[6]), int(coordsTexto[7])));
   }
 
   void resetEsquinas() {

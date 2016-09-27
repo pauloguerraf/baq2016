@@ -65,12 +65,8 @@ class Galeria {
   void changePhoto() {
     if (currentfot < numfots-1)currentfot=currentfot+1;
     else currentfot = 0;
-    changeState();
-  }
-
-  void changeState() {
     isChanging = false;
-  }
+  }  
 
   void dibujar() {
     esq1= esquinas[0];

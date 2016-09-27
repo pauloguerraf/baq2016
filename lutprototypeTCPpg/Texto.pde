@@ -1,6 +1,5 @@
 class Texto {
   PVector [] esquinas = new PVector[4];
-  PVector loc;
   PGraphics pg;
   PImage img;
   PVector esq1;
@@ -13,13 +12,13 @@ class Texto {
   Texto() {
   }
 
-  Texto(PVector pos1_, PVector pos2_, PVector pos3_, PVector pos4_, String str_) {
+  Texto(PVector pos1_, PVector pos2_, PVector pos3_, PVector pos4_) {
     esquinas[0] = new PVector(pos1_.x, pos1_.y);  
     esquinas[1] = new PVector(pos2_.x, pos2_.y);    
     esquinas[2] = new PVector(pos3_.x, pos3_.y);    
     esquinas[3] = new PVector(pos4_.x, pos4_.y);
     pg = createGraphics(600, 667, P3D);
-    imagePG = loadImage(str_);
+    imagePG = loadImage("categoria_"+CAT+"/"+CAT+"_ficha_0/texto.jpg");
   }
 
   void setEsquinas(PVector pos1_, PVector pos2_, PVector pos3_, PVector pos4_) {

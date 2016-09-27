@@ -8,7 +8,7 @@ Pantalla pantalla;
 float seleccion = 0;
 float lastPosicion = 0;
 float currentPosicion = 0;
-float rad = 20.0;
+float rad = 10.0;
 int numFichas = 3;
 boolean isChanging = false;
 boolean showStroke = false;
@@ -16,7 +16,7 @@ String [] strings = new String[4];
 String CAT = "b";
 ArrayList<String> nombres = new ArrayList<String>();
 java.io.FilenameFilter jpgFilter = new java.io.FilenameFilter() {
-  boolean accept(File dir, String name) {
+  public boolean accept(File dir, String name) {
     return name.toLowerCase().endsWith(".jpg");
   }
 };
