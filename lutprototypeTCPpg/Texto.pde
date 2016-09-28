@@ -9,9 +9,6 @@ class Texto {
   PImage imagePG;
   PImage nextImagePG;
 
-  Texto() {
-  }
-
   Texto(PVector pos1_, PVector pos2_, PVector pos3_, PVector pos4_) {
     esquinas[0] = new PVector(pos1_.x, pos1_.y);  
     esquinas[1] = new PVector(pos2_.x, pos2_.y);    

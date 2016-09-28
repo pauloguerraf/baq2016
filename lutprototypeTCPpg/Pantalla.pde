@@ -1,5 +1,4 @@
 class Pantalla {
-  PApplet parent;
   GaleriaPlanos laminas;
   Galeria galeria;
   Texto texto;
