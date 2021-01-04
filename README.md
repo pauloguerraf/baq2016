@@ -2,7 +2,7 @@
 
 Quick prototype using Processing to test control of projection mapped digital posters through OSC messages. 
 
-The project consists of an image gallery that looks for images within a data folder. The selected image is projected as a quad texture. Each of point of the projected quad can be tranlasted in order to achieve the right projection perspective on the projection surface. 
+The project consists of an image gallery that looks for images within a data folder. The selected image is projected as a quad texture. Each of point of the projected quad can be tranlasted in order to achieve the right projection perspective on the projection surface. The user can navigate through the image gallery using a knob connected to a [Particle Photon](https://docs.particle.io/photon/) that send the current knob position via OSC messages to the server controlling the projection. 
 
 The final version of this project was implemented using openFrameworks due to performance issues we encountered when using Processing on a Raspberry Pi.
 
